@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(94, 91, 91);
+}
+
+/* header */
+.H-container {
+    height: 100%;
+    font-size: 10px;
+    border-bottom: 1px solid black;
+}
+
+.links {
+    padding: 1px 1px;
+    display: flex;
+    background-color: rgb(179, 170, 170);
+}
+
+.links button {
+    background: transparent;
+    width: 55px;
+    font-size: 16px;
+    border: transparent;
+}
+
+.links button:hover {
+    border-top: 1px solid rgb(219, 214, 214);
+    border-left: 1px solid rgb(248, 243, 243);
+    border-bottom: 1px solid rgb(59, 56, 56);
+    border-right: 1px solid rgb(26, 14, 14);
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.links a {
+    color: black;
+    text-decoration: none;
+}
+
+
+/* body */
+
+.B-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+
+}
+
+.L-body {
+    height: 825px;
+    width: 60px;
+    background-color: rgb(209, 206, 206);
+    display: grid;
+    grid-template-columns: 20px;
+    grid-template-rows: repeat(3, 20px);
+    border-right: 0.5px solid black;
+}
+
+.L-body img {
+    height: 20px;
+}
+
+.L-body .button-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 2, 1fr;
+}
+
+.L-body button {
+    width: 30px;
+    border-bottom: 1px solid #ffffff;
+    border-top: 0, 1px solid rgb(63, 58, 58);
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.L-body button:focus {
+    background-color: #fffbfb;
+}
+
+#rect img {
+    width: 1px;
+}
+
+.F-container {
+    background-color: rgb(214, 200, 200);
+    padding: 15px 15px;
+    border-top: 2px solid rgb(255, 255, 255);
+}
+
+.drawing-board canvas {
+    width: 900px;
+    height: 400px;
+    border: 1px solid black;
+    margin-right: 950px;
+    margin-left: 10px;
+    margin-top: 10px;
+    padding-top: 80px;
+    background-color: #ffffff;
+    color: black;
+}
+
+.f-b {
+    display: grid;
+    grid-template-columns: repeat(14, 10px);
+    grid-template-rows: repeat(2, 12px);
+}
+
+.f-b {
+    border: transparent;
+
+}
+
+.F-body {
+    height: 20px;
+    /* font-size: 1px; */
+    margin-top: 15px;
+    border-top: 4px solid #b1abab;
+    display: grid;
+    align-content: center;
+    grid-template-columns: 5fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    background-color: rgb(214, 200, 200);
+}
+
+#F-body2,
+#F-body3 {
+    border-left: 4px solid #bbb1b1;
+    border-radius: 3px;
+}
