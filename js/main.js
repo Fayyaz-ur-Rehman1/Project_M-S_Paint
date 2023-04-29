@@ -8,8 +8,7 @@ const paintTools = document.getElementById("paint-tool"); //  select all image m
 let prevMouseX, prevMouseY, snapshot
 isdrawing = false;
 selectedTool = "pencil"
-brushWidth = 3;
-
+brushWidth = 1;
 
 
 window.addEventListener("load", function () {
@@ -18,8 +17,19 @@ window.addEventListener("load", function () {
     canvas.height = canvas.offsetHeight;
 })
 
-const drawRect = (e) => {
-    ctx.strokeRect(e.clientX, e.clientY, prevMouseX - e.clientX, prevMouseY - e.clientY );
+
+const drawroundrec = (e) => { // draw rounded rectangle
+    ctx.beginPath(); // create new path to draw;
+    prevMouseX = e.clientX;
+    prevMouseY = e.clientY;
+    ctx.roundRect(e.clientX, e.clientY, 100, 100, 5);
+    ctx.stroke()
+}
+
+
+
+const drawRect = (e) => { // rectangle part 
+    ctx.strokeRect(e.clientX, e.clientY, prevMouseX - e.clientX, prevMouseY - e.clientY);
 }
 
 
@@ -33,26 +43,29 @@ function startdraw(e) {
     snapshot = ctx.getImageData(0, 0, canvas.width, canvas.height);
 }
 
+
 const drawEraser = (e) => { // draw eraser
     ctx.strokeStyle = "white"
-    ctx.strokeRect(e.clientX, e.clientY, prevMouseX - e.clientX, prevMouseY - e.clientY);
+    ctx.lineTo(e.clientX, e.clientY);
+    ctx.stroke()
 }
 
 
+const drawcircle = (e) => {
+    ctx.beginPath(); // creating new path to draw circle 
+    // getting reduis for circle according to the mouse pointer
+    let radius = Math.sqrt(Math.pow((prevMouseX - e.clientX), 2) + Math.pow((prevMouseY - e.clientY), 2))
+    ctx.arc(prevMouseX, prevMouseY, radius, 0, 2 * Math.PI)
+    ctx.stroke();
+}
 
-const drawelepse = (e) => { // draw elepse
-  let x = canvas.width /2;
-  let y = canvas.height / 2;
-  let radiusX = 100;
-  let radiusY = 50;
-  let startAngle = 0
-  let endAngle = 2 * Math.PI;
-  let clockwise = false
-  let pre = prevMouseX
-  let preY = prevMouseY
-  ctx.beginPath();
-  ctx.ellipse(x , y, radiusX , radiusY , 0 , startAngle , endAngle , clockwise , pre , preY)
-  ctx.stroke()
+const drawtriangle = (e) => {
+    ctx.beginPath();// create new path to the draw circle
+    ctx.moveTo(prevMouseX, prevMouseY); // move triangle to the mouse pointer
+    ctx.lineTo(e.clientX, e.clientY)//create first line according mouse pointer
+    ctx.lineTo(prevMouseX * 2 - e.clientX, e.clientY) // create bottom line in traingle
+    ctx.closePath(); // close path of a triangle third line is autometically draw
+    ctx.stroke()
 }
 
 
@@ -61,7 +74,7 @@ function drawing(e) {
         return;
     ctx.putImageData(snapshot, 0, 0)
 
-    if (selectedTool === "pencil") {
+    if (selectedTool === "pencil") { // draw pencil
         ctx.lineTo(e.clientX, e.clientY)  // creating line according to the mouse pointer
         ctx.stroke(); // drawing filing line with color
     } else if (selectedTool === "ractangle") {
@@ -69,8 +82,13 @@ function drawing(e) {
 
     } else if (selectedTool === "eraser") {
         drawEraser(e)
-    } else if (selectedTool === "elepse") {
-        drawelepse(e)
+    } else if (selectedTool === "circle") {
+        drawcircle(e)
+    } else if (selectedTool === "rounded-ractangel") {
+        drawroundrec(e)
+        // ctx.putImageData(snapshot, 0, 0)
+    } else if (selectedTool === "triangle") {
+        drawtriangle(e)
     }
 }
 
