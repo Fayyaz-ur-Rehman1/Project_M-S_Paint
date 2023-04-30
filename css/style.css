@@ -5,6 +5,7 @@
 
 body {
     background-color: rgb(94, 91, 91);
+
 }
 
 /* header */
@@ -52,7 +53,7 @@ body {
 }
 
 .L-body {
-    height: 825px;
+    height: 725px;
     width: 60px;
     background-color: rgb(209, 206, 206);
     display: grid;
@@ -134,3 +135,151 @@ body {
     border-radius: 3px;
 }
 
+#option0 {
+    background-color: rgb(32, 104, 146);
+}
+
+.f-b .option:nth-child(1) {
+    background-color: #fffbfb;
+}
+
+.f-b .option:nth-child(2) {
+    background-color: #000;
+}
+
+.f-b .option:nth-child(3) {
+    background-color: rgb(226, 59, 59);
+}
+
+.f-b .option:nth-child(4) {
+    background-color: rgb(159, 231, 49);
+}
+
+.f-b .option:nth-child(5) {
+    background-color: #4A98F7;
+}
+
+.f-b .option:nth-child(6) {
+    background-color: rgb(238, 62, 238);
+}
+
+.f-b .option:nth-child(7) {
+    background-color: rgb(196, 188, 188);
+}
+
+.f-b .option:nth-child(8) {
+    background-color: rgb(238, 170, 86);
+}
+
+.f-b .option:nth-child(9) {
+    background-color: rgb(65, 231, 231);
+}
+
+.f-b .option:nth-child(10) {
+    background-color: rgb(182, 93, 60);
+}
+
+.f-b .option:nth-child(11) {
+    background-color: rgb(82, 136, 138);
+}
+
+.f-b .option:nth-child(12) {
+    background-color: rgb(201, 14, 117);
+}
+
+.f-b .option:nth-child(13) {
+    background-color: darkseagreen;
+}
+
+.f-b .option:nth-child(14) {
+    background-color: rgb(235, 235, 58);
+}
+
+.f-b .option:nth-child(15) {
+    background-color: hotpink;
+}
+
+.f-b .option:nth-child(16) {
+    background-color: rgb(248, 139, 139);
+}
+
+.f-b .option:nth-child(17) {
+    background-color: rgb(21, 3, 182);
+}
+
+.f-b .option:nth-child(18) {
+    background-color: indianred;
+}
+
+.f-b .option:nth-child(19) {
+    background-color: rgb(240, 205, 9)
+}
+
+.f-b .option:nth-child(20) {
+    background-color: rgb(32, 104, 146);
+}
+
+.f-b .option:nth-child(21) {
+    background-color: darkgoldenrod;
+}
+
+.f-b .option:nth-child(22) {
+    background-color: firebrick;
+}
+
+.f-b .option:nth-child(23) {
+    background-color: darkslateblue;
+}
+
+.f-b .option:nth-child(24) {
+    background-color: lightsalmon;
+}
+
+.f-b .option:nth-child(25) {
+    background-color: deeppink;
+}
+
+.f-b .option:nth-child(26) {
+    background-color: cornflowerblue;
+}
+
+.f-b .option:nth-child(27) {
+    background-color: brown;
+}
+
+.f-b .option:nth-child(28) {
+    background-color: dimgrey;
+}
+
+ .brushsize {
+    width: 300px;
+    margin-left: 600px;
+}
+
+#brushsize :hover {
+    color: black;
+    background-color: #000;
+}
+
+.cntr1{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 23px;
+}
+.cntr1 button{
+    text-align: start;
+    padding: 3px 3px;
+    border: transparent;
+    font-size: 12px;
+}
+.cntr1 button:hover{
+    border: 1px solid black;
+    background-color: rgb(28, 28, 158);
+    color: aliceblue;
+    font-size: 12px;
+}
+
+.links{
+    position: relative;
+}

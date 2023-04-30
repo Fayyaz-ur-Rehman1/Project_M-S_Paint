@@ -13,7 +13,7 @@
 <body>
     <div class="H-container">
         <div class="links">
-            <button><a href="#"><u>F</u>ile</a></button>
+            <button id="file"><a href="#"><u>F</u>ile</a></button>
             <button><a href="#"><u>E</u>dit</a></button>
             <button><a href="#"><u>V</u>iew</a></button>
             <button><a href="#"><u>I</u>mage</a></button>
@@ -31,47 +31,54 @@
                 <button class="Rect tool" id="circle"><img src="./img/Circle-Logo.png" alt="circle"></button>
                 <button class="Rect tool" id="triangle"><img src="./img/traingle.png" alt="triangle"></button>
                 <button class="Rect tool" id="elepse"><img src="./img/elepse.png" alt="elepse"></button>
-                <button class="Rect tool" id="rounded-ractangel"><img src="./img/rounded-ractangel.png" alt="rounded-ractangel"></button>
+                <button class="Rect tool" id="rounded-ractangel"><img src="./img/rounded-ractangel.png"
+                        alt="rounded-ractangel"></button>
                 <button class="Rect tool" id="eraser"><img src="./img/eraser.png" alt="eraser"></button>
             </div>
         </div>
-
+ 
+        
+         
         <section class="drawing-board">
             <canvas></canvas>
         </section>
     </div>
-
     <div class="F-container">
         <div class="f-b">
-            <button></button>
-            <button></button>
-            <button></button>
-            <button></button>
-            <button></button>
-            <button></button>
-            <button></button>
-            <button></button>
-            <button></button>
-            <button></button>
-            <button></button>
-            <button></button>
-            <button></button>
-            <button></button>
-            <button></button>
-            <button></button>
-            <button></button>
-            <button></button>
-            <button></button>
-            <button></button>
-            <button></button>
-            <button></button>
-            <button></button>
-            <button></button>
-            <button></button>
-            <button></button>
-            <button></button>
-            <button></button>
+         
+                <button class="option"></button>
+                <button class="option" ></button>
+                <button class="option" ></button>
+                <button class="option" ></button>
+                <button class="option" ></button>
+                <button class="option" ></button>
+                <button class="option" ></button>
+                <button class="option" ></button>
+                <button class="option" ></button>
+                <button class="option" ></button>
+                <button class="option" ></button>
+                <button class="option" ></button>
+                <button class="option" ></button>
+                <button class="option" ></button>
+                <button class="option" ></button>
+                <button class="option" ></button>
+                <button class="option" ></button>
+                <button class="option" ></button>
+                <button class="option" ></button>
+                <button class="option" ></button>
+                <button class="option" ></button>
+                <button class="option" ></button>
+                <button class="option" ></button>
+                <button class="option" ></button>
+                <button class="option" ></button>
+                <button class="option" ></button>
+                <button class="option" ></button>
+                <button class="option" ></button>
+           
         </div>
+
+    <input type="range" class="brushsize"  min="1" max="50" value="5">
+
         <div class="F-body">
             <div id="F-body1">
                 <p>For Help , click Help Topics on the Help Menu</p>
@@ -80,8 +87,7 @@
             <div id="F-body3"></div>
         </div>
     </div>
-
-
+    <div id="boxes1"></div>
 </body>
 <script src="./js/main.js"></script>
 
