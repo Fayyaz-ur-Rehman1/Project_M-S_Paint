@@ -53,7 +53,7 @@ body {
 }
 
 .L-body {
-    height: 725px;
+    height: 700px;
     width: 60px;
     background-color: rgb(209, 206, 206);
     display: grid;
@@ -258,7 +258,7 @@ body {
 
 #brushsize :hover {
     color: black;
-    background-color: #000;
+    background-color: #e9dddd;
 }
 
 .cntr1{
@@ -272,6 +272,7 @@ body {
     padding: 3px 3px;
     border: transparent;
     font-size: 12px;
+    background-color: rgb(187, 184, 184);
 }
 .cntr1 button:hover{
     border: 1px solid black;

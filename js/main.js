@@ -1,3 +1,4 @@
+// Bismillah
 const canvas = document.querySelector("canvas"); // Select canvas
 const imgall = document.querySelectorAll(".tool"); // Select all  tools
 const paintTools = document.getElementById("paint-tool"); //  select all image means pait tool container
@@ -23,20 +24,17 @@ window.addEventListener("load", function () {
 
 
 const drawroundrec = (e) => { // draw rounded rectangle
-    ctx.beginPath(); // create new path to draw;
-    prevMouseX = e.clientX;
-    prevMouseY = e.clientY;
-    ctx.roundRect(e.clientX, e.clientY, 100, 100, 5);
-    // ctx.strokeRect(e.clientX , e.clientY , prevMouseX - e.clientX ,prevMouseY - e.clientY  )
+    ctx.beginPath();// create new path to draw;
+    ctx.roundRect(e.clientX, e.clientY, prevMouseX - e.clientX, prevMouseY - e.clientY, 25);
+    ctx.stroke();
 }
-
 
 
 const drawRect = (e) => { // rectangle part 
-    ctx.strokeRect(e.clientX, e.clientY, prevMouseX - e.clientX, prevMouseY - e.clientY);
+    ctx.strokeRect(e.clientX, e.clientY, prevMouseX - e.clientX, prevMouseY - e.clientY, prevMouseY - e.clientX);
 }
 
-
+10
 
 function startdraw(e) {
     isdrawing = true; // draw rectangle
@@ -76,7 +74,19 @@ const drawtriangle = (e) => {
 }
 
 const drawword = (e) => {
-    ctx.strokeRect(e.clientX, e.clientY, prevMouseX - e.clientX, prevMouseY - e.clientY);
+    ctx.font = "30px Arial";
+    ctx.strokeText("", e.clientX, e.clientY)
+    // ctx.strokeRect(e.clientX, e.clientY, prevMouseX - e.clientX, prevMouseY - e.clientY);
+
+}
+
+
+const drawelepse = (e) => {
+    ctx.beginPath(); // creating new path to draw circle 
+    // getting reduis for circle according to the mouse pointer
+    let radius = Math.sqrt(Math.pow((prevMouseX - e.clientX), 2) + Math.pow((prevMouseY - e.clientY), 2));
+    ctx.arc(prevMouseX, prevMouseY, radius, 0, 2 * Math.PI);
+    ctx.stroke();
 }
 
 
@@ -102,6 +112,8 @@ function drawing(e) {
         drawtriangle(e);
     } else if (selectedTool === "word") {
         drawword(e);
+    } else if (selectedTool === "elepse") {
+        drawelepse(e)
     }
 }
 
@@ -132,8 +144,9 @@ canvas.addEventListener("mouseup", function () {
 });
 
 let file = document.getElementById("file");
-file.addEventListener("click",()=>{
-    if(file.textContent == "File"){
-        document.getElementById("boxes1").innerHTML = "<div class='cntr1'><button>New</button> <button>Open</button> <button>Save</button> <button>Save As</button> <button>Load From URL</button> <button>Upload To Imgular</button> <button>Manage Storage</button> <button>Print Preview</button> <button>Page Setup</button> <button>Print</button> <button>Set As Wallpaper (Tiled)</button> <button>Set As Wellpaper(Centered)</button> <button>Recent File</button> <button>Exit</button></div> "
+file.addEventListener("click", () => {
+    if (file.textContent == "File") {
+        document.getElementById("boxes1").innerHTML = "<div class='cntr1'><button> <pre><u>N</u>ew            Ctrl+N </pre></button> <button><pre><u>O</u>pen           Ctrl+O </pre></button> <button><pre><u>S</u>ave           Ctrl+S</pre></button> <button><pre>Save <u>A</u>s        Ctrl+Shift+S</pre></button> <button><u>L</u>oad From URL</button> <button><u>U</u>pload To Imgular</button> <button>Manage Storage</button> <button>Print Preview</button> <button>Page Setup</button> <button><pre><u>P</u>rint          Ctrl+P</pre></button> <button>Set As <u>W</u>allpaper (Tiled)</button> <button>Set As Wellpaper(<u>C</u>entered)</button> <button>Recent File</button> <button><pre>E<u>x</u>it           Alt+F4</pre></button></div> ";
     }
-})
+});
+
